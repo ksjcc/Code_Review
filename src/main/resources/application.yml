@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: Code_Review
+
+server:
+  port: 8080
+
+
+langchain4j:
+  open-ai:
+    chat-model:
+      api-key: ${DASHSCOPE_API_KEY:}
+      base-url: https://dashscope.aliyuncs.com/compatible-mode/v1
+      model-name: qwen-plus
+      temperature: 0.7
+
