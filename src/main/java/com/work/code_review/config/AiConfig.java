@@ -1,5 +1,8 @@
 package com.work.code_review.config;
 
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -11,6 +14,12 @@ import dev.langchain4j.model.openai.OpenAiStreamingChatModel;
 
 @Configuration
 public class AiConfig {
+  @Bean
+  public Executor classifierExecutor(
+      @Value("${classifier.async.concurrency:5}") int concurrency) {
+    return Executors.newFixedThreadPool(concurrency);
+  }
+
   @Bean
   public ChatModel chatModel(
       @Value("${langchain4j.open-ai.chat-model.api-key}") String apiKey,

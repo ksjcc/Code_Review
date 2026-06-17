@@ -14,3 +14,8 @@ langchain4j:
       model-name: qwen-plus
       temperature: 0.7
 
+classifier:
+  async:
+    concurrency: 5
+  dirty:
+    output-file: src/main/resources/static/task1_dirty_records.json

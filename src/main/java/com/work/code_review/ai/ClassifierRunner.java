@@ -19,8 +19,8 @@ public class ClassifierRunner {
                 .run(args);
 
         try {
-            ClassifierService task1ClassifierService = context.getBean(ClassifierService.class);
-            task1ClassifierService.batchClassify(args[0], args[1]);
+            ClassifierService ClassifierService = context.getBean(ClassifierService.class);
+            ClassifierService.batchClassify(args[0], args[1]);
         } finally {
             context.close();
         }
